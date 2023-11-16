@@ -7,8 +7,8 @@ public class TournamentHost extends Person {
     public TournamentHost(String name, String address) {
         super(name, address);
         numGamesPlaying = 0;
-        gameIDs = new int[5]; // Maximum of 5 games
-        Arrays.fill(gameIDs, -1); // Initializing with -1 to indicate empty slots
+        gameIDs = new int[5];
+        Arrays.fill(gameIDs, -1);
     }
 
     public boolean addGame(int gameID) {
@@ -35,11 +35,10 @@ public class TournamentHost extends Person {
             return false;
         }
 
-        // Remove the gameID and rearrange the array
         for (int i = gameIndex; i < numGamesPlaying - 1; i++) {
             gameIDs[i] = gameIDs[i + 1];
         }
-        gameIDs[numGamesPlaying - 1] = -1; // Empty the last slot
+        gameIDs[numGamesPlaying - 1] = -1;
         numGamesPlaying--;
         System.out.println("GameID " + gameID + " has been removed.");
         return true;
