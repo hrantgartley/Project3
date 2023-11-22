@@ -1,3 +1,5 @@
+package src;
+
 public class Gamer extends Person {
     private int numGames;
     private int[] gameCodes;
